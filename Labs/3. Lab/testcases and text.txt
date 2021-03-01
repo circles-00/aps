@@ -1,0 +1,116 @@
+/* 
+
+Даден е некој аритметички израз. Аритметичкиот израз е во облик (A+B) или (A-B) каде што А и B истовремено се други аритметички изрази или цифри од 0-9. Потребно е да го евалуирате дадениот израз.
+
+Име на класата (Java): ArithmeticExpression
+*/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class ArithmeticExpression {
+    
+    // funkcija za presmetuvanje na izrazot pocnuvajki
+    // od indeks l, zavrsuvajki vo indeks r
+    static int presmetaj(char c[], int l, int r) {
+        // Vasiot kod tuka
+    }
+    
+    public static void main(String[] args) throws Exception {
+        int i,j,k;
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String expression = br.readLine();
+        char exp[] = expression.toCharArray();
+        
+        int rez = presmetaj(exp, 0, exp.length-1);
+        System.out.println(rez);
+        
+        br.close();
+        
+    }
+    
+}
+
+test cases: https://imgur.com/a/CLYB3du
+
+
+/* Цик цак секвенца Problem 2 (1 / 5)
+
+Секвенца од броеви се смета за цик цак секвенца ако броевите во секвенцата се наизменично позитивни и негативни т.е. за секој пар од последователни броеви важи дека едниот е позитивен, а другиот е негативен.
+
+На пример -1 2 -9 8 -4 е цик цак секвенца, но -1 9 7 -3 8 -3 не е, затоа што 9 и 7 се соседни броеви, но и двата се позитивни. Цик цак секвенцата може да почне или со позитивен или со негативен број. Секвенца од само еден ненулти број се смета како цик цак секвенца. За дадена низа од броеви да се напише алгоритам кој ќе ја врати должината на најдолгата подниза која претставува цик цак секвенца.
+
+Во првиот ред од влезот даден е бројот N за должината на низата. Во секој од следните N редови е даден по еден број од оригиналната низа. На излез треба да се испечати должината на најдолгата подниза која е цик цак секвенца од оригиналната низа.
+
+Име на класата: ZigZagSequence
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class ZigZagSequence {
+    
+    static int najdiNajdolgaCikCak(int a[]) {
+		// Vasiot kod tuka
+	}
+    
+    public static void main(String[] args) throws Exception {
+        int i,j,k;
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        int N = Integer.parseInt(br.readLine());
+        int a[] = new int[N];
+        for (i=0;i<N;i++)
+            a[i] = Integer.parseInt(br.readLine());
+        
+        int rez = najdiNajdolgaCikCak(a);
+        System.out.println(rez);
+        
+        br.close();
+       	
+    }
+    
+}
+
+test cases: https://imgur.com/a/hucxnUI
+
+/* Сума од апсолутни разлики (Тип колоквиумска задача) Problem 3 (3 / 3)
+
+Дадена е низа од N природни броеви и еден број K. Нека броевите се означени од a0 до aN−1. Да ја дефинираме сумата од апсолутни разлики како abs(a1−a0)+abs(a2−a1)+…+abs(aN−1−aN−2). Да се изберат точно K броеви од низата, така што кога ќе се спојат во една низа, сумата од апсолутни разлики е максимална. Да се испечати оваа сума.
+
+Влез: Во првата линија ви се дадени два броеви N (1≤N≤100) и K (1≤K≤100, K≤N). Во втората линија ви се дадени N позитивни природни броеви, секој од броевите е помал од 1,000.
+
+Излез: Да се испечати бараната максималната сума од апсолутни разлики.
+
+Забелешка: Броевите се земаат во оној редослед во кој што се дадени во првата низа. Не смее да се менува редоследот на броевите во новодобиената низа.
+
+Име на класата (Java): SumOfAbsoluteDifferences.
+
+Делумно решение: Задачата се смета за делумно решена доколку се поминати 5 тест примери.
+ */
+
+#include<stdio.h>
+
+int solve(int numbers[], int N, int K) {
+    // vasiot kod ovde
+    // mozete da napisete i drugi funkcii dokolku vi se potrebni
+}
+
+int main() {
+    int i, N, K;
+    int numbers[100];
+
+    scanf("%d %d\n", &N, &K);
+    for (i=0;i<N;i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    int res = solve(numbers, N, K);
+    printf("%d\n", res);
+
+    return 0;
+}
+
+test cases: https://imgur.com/a/68Vb6Xq

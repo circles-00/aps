@@ -1,0 +1,138 @@
+Постфикс нотација Problem 1 (3 / 7)
+
+Да се напише алгоритам кој ќе врши евалуација на израз во постфикс нотација.
+
+На влез се чита низа од знаци за изразот (стринг), а на излез се печати вредноста на изразот по евалуацијата.
+
+Име на класата (Java): PostFixEvaluation
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.NoSuchElementException;
+
+public class PostFixEvaluation {
+		
+	public static void main(String[] args) throws Exception{
+          
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String expression = br.readLine();
+        char exp[] = expression.toCharArray();
+        
+   
+        
+        br.close();
+
+	}
+
+}
+
+test cases: https://imgur.com/a/rAByXlw
+
+Модифициран XML код Problem 2 (1 / 2)
+
+Даден е некој модифициран XML код. Модифицираниот XML код ги користи симболите '[' и ']', за отварање и затворање на таг, соодветно, наместо стандардните '
+
+' и '>'. Треба да се провери дали сите тагови во кодот се правилно вгнездени (дали кодот е валиден) т.е. дали секој отворен таг има соодветен затворен таг со истото име на соодветното место во кодот. За поедноставување, дадено е дека секој отворен таг мора да има свој затворен таг и дека таговите немаат атрибути.
+
+На влез е даден бројот на редови во кодот и самиот XML со секој таг во посебен ред, а на излез треба да се испечати 1 или 0 за валиден или невалиден код, соодветно.
+
+Објаснување: Во модифицираниот XML код секој отворен таг е во облик [imeNaTag], а соодветниот затворен таг е во облик [/imeNaTag].
+
+Пример за правилно вгнездени тагови во XML e:
+
+[tag1]
+[tag2] 
+Podatok
+[/tag2] 
+[/tag1] 
+
+Пример за неправилно вгнездени тагови во XML e:
+
+[tag1]
+[tag2] 
+Podatok
+[/tag1]
+[/tag2]
+
+Име на класата (Java): CheckXML
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.NoSuchElementException;
+
+public class CheckXML {	
+   
+	public static void main(String[] args) throws Exception{
+          
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
+        String s = br.readLine();
+		int n = Integer.parseInt(s);
+		String [] redovi = new String[n];
+	
+		for(int i=0;i<n;i++)
+			redovi[i] = br.readLine();
+       
+		int valid;
+    	
+        // Vasiot kod tuka
+        // Moze da koristite dopolnitelni funkcii ako vi se potrebni
+        
+        System.out.println(valid);
+        
+        br.close();
+	}
+}
+
+test cases: https://imgur.com/a/PEeNS9p
+
+Шалтерот на МВР Problem 3 (3 / 13)
+
+Луѓето доаѓаат наутро во МВР за да извадат еден или повеќе документи.
+
+Документите може да бидат:
+1. Лична карта
+2. Пасош
+3. Возачка дозвола
+
+Кога се отвора шалтерот прво се услужуваат луѓето кои чекаат за лична карта, па потоа оние за пасош и на крај оние за возачка дозвола.
+Секој човек кога ќе дојде си застанува во редицата за соодветната исправа која ја вади (т.е. или во редицата за лични карти или во редицата за пасоши или во редицата за возачки дозволи). Доколку еден човек има повеќе документи за вадење прво вади лична карта, па пасош и на крај возачка. Така ако еден човек треба да вади и лична карта и возачка дозвола прво застанува во редицата за лични карти и откако ќе заврши таму оди на крајот на редицата за возачки дозволи.
+
+Влез: Првиот ред означува колку луѓе вкупно дошле во МВР. Потоа за секој човек се внесуваат четири реда, во првиот е името и презимето на човекот, а во останатите три реда се кажува кој документ соодветно (лична карта, пасош и возачка) треба да се земе, притоа 1 значи дека треба да се земе тој документ, 0 значи дека не треба да се земе.
+
+На пример:
+
+Aleksandar Aleksandrovski
+1
+0
+1
+
+означува дека Александар Александровски ќе вади и лична карта и возачка дозвола, но нема да вади пасош.
+
+Излез: Ги печати имињата на луѓето по редоследот по кој завршуваат со вадење на документи.
+
+Име на класата (Java): MVR
+
+import java.util.Scanner;
+
+
+public class MVR {
+
+	public static void main(String[] args) {
+		
+		Scanner br = new Scanner(System.in);
+		
+        int N = Integer.parseInt(br.nextLine());
+        for(int i=1;i<=N;i++){
+        	String imePrezime = br.nextLine();
+        	int lKarta = Integer.parseInt(br.nextLine());
+        	int pasos = Integer.parseInt(br.nextLine());
+        	int vozacka = Integer.parseInt(br.nextLine());
+        	Gragjanin covek = new Gragjanin(imePrezime,lKarta,pasos,vozacka);
+       	}
+}
+
+
+test cases: https://imgur.com/a/YWE8eyx
+
